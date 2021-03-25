@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MMC
 {
-    public class Picture : Item
+    public class Image : Item
     {
         //
         //  Declare reference to current billboard here
