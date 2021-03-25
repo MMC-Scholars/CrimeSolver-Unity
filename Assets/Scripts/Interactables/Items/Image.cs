@@ -10,7 +10,7 @@ namespace MMC
         public bool bIsPinned; // specifically "pinned" to a board
         public bool bImagePinsPermanently; // theoretically an image can be pinned permanently (to some surface) but not be "pinned" to a board
         public Vector3 vPinnedImageScale;
-        public override void OnStartInteract(Pawn interacter, Vector3 hitLocation, Vector3 hitNormal)
+        public override void StartInteract(Pawn interacter, Vector3 hitLocation, Vector3 hitNormal)
         {
             PlayerPawn player = interacter as PlayerPawn;
             if (player != null)

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MMC
@@ -11,7 +9,7 @@ namespace MMC
         public Transform tInHandTransform;
         public Transform tAimTransform;
 
-        public virtual void OnStartInteract(Pawn interacter, Vector3 hitLocation, Vector3 hitNormal)
+        public virtual void StartInteract(Pawn interacter, Vector3 hitLocation, Vector3 hitNormal)
         {
             PlayerPawn player = interacter as PlayerPawn;
             if (player != null)
@@ -22,14 +20,14 @@ namespace MMC
 
             }
         }
-        public virtual void OnStopInteract() { }
-        public virtual void OnSelect()
+        public virtual void StopInteract() { }
+        public virtual void Select()
         {
             bIsInHand = true;
             gameObject.GetComponent<Renderer>().enabled = true;
         }
 
-        public virtual void OnDeselect()
+        public virtual void Deselect()
         {
             bIsInHand = false;
             gameObject.GetComponent<Renderer>().enabled = false;
