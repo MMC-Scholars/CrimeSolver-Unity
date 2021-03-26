@@ -2,11 +2,11 @@ namespace MMC
 {
     public class Tool : Item
     {
-        public void UseTool()
+        public virtual void UseTool()
         {
 
         }
-        public void UseToolAiming()
+        public virtual void UseToolAiming()
         {
 
         }
