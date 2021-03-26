@@ -1,13 +1,32 @@
+
 using UnityEngine;
 
 namespace MMC
 {
     public class Item : MonoBehaviour, IInteractable
     {
-        public bool bIsInInventory;
-        public bool bIsInHand;
-        public Transform tInHandTransform;
-        public Transform tAimTransform;
+        bool isInInventory;
+        public bool IsInInventory { get; protected set; }
+
+        bool isInHand;
+        public bool IsInHand { get; protected set; }
+
+        [SerializeField]
+        Vector3 inHandPosition;
+        public Vector3 InHandPosition { get; }
+
+        [SerializeField]
+        Quaternion inHandRotation;
+        public Quaternion InHandRotation { get; }
+
+
+        [SerializeField]
+        Vector3 aimPosition;
+        public Vector3 AimPosition { get; }
+
+        [SerializeField]
+        Quaternion aimRotation;
+        public Quaternion AimRotation { get; }
 
         public virtual void StartInteract(Pawn interacter, Vector3 hitLocation, Vector3 hitNormal)
         {
@@ -23,13 +42,13 @@ namespace MMC
         public virtual void StopInteract() { }
         public virtual void Select()
         {
-            bIsInHand = true;
+            IsInHand = true;
             gameObject.GetComponent<Renderer>().enabled = true;
         }
 
         public virtual void Deselect()
         {
-            bIsInHand = false;
+            IsInHand = false;
             gameObject.GetComponent<Renderer>().enabled = false;
         }
 
