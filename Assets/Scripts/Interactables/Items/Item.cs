@@ -5,7 +5,6 @@ namespace MMC
 {
     public abstract class Item : MonoBehaviour, IInteractable
     {
-        public bool IsInInventory { get; protected set; }
         public bool IsInHand { get; protected set; }
         [SerializeField]
         Vector3 inHandPosition;
