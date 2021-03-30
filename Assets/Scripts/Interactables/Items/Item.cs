@@ -22,16 +22,11 @@ namespace MMC
         Quaternion aimRotation;
         public Quaternion AimRotation { get { return aimRotation; } }
 
-        public virtual void StartInteract(Pawn interacter, Vector3 hitLocation, Vector3 hitNormal)
+        public virtual void StartInteract(PlayerPawn player, Vector3 hitLocation, Vector3 hitNormal)
         {
-            PlayerPawn player = interacter as PlayerPawn;
-            if (player != null)
-            {
-                // check for space in the player inventory
+            // check for space in the player inventory
 
-                // if there is space then place item into inventory
-
-            }
+            // if there is space then place item into inventory
         }
         public virtual void StopInteract() { }
 
