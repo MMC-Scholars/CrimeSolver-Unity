@@ -8,7 +8,7 @@ namespace MMC
         //  Declare reference to current billboard here
         //
 
-        public bool IsPinned { get; set; } // specifically "pinned" to a board
+        public bool IsPinned { get; protected set; } // specifically "pinned" to a board
 
         [SerializeField]
         bool imagePinsPermanently;
