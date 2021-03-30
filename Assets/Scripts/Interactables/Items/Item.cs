@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MMC
 {
-    public class Item : MonoBehaviour, IInteractable
+    public abstract class Item : MonoBehaviour, IInteractable
     {
         public bool IsInInventory { get; set; }
         public bool IsInHand { get; set; }
@@ -36,16 +36,20 @@ namespace MMC
             }
         }
         public virtual void StopInteract() { }
+
+        void SetSelect(bool bIsSelected)
+        {
+            IsInHand = bIsSelected;
+            gameObject.GetComponent<Renderer>().enabled = IsInHand;
+        }
         public virtual void Select()
         {
-            IsInHand = true;
-            gameObject.GetComponent<Renderer>().enabled = true;
+            SetSelect(true);
         }
 
         public virtual void Deselect()
         {
-            IsInHand = false;
-            gameObject.GetComponent<Renderer>().enabled = false;
+            SetSelect(false);
         }
 
     }
