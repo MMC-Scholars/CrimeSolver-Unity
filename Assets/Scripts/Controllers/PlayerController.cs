@@ -10,15 +10,16 @@ namespace MMC
         // https://docs.unity3d.com/ScriptReference/Component-camera.html
         new Camera camera;
 
+        Transform playerMesh;
+
         float xRotation = 0.0f;
         float yRotation = 0.0f;
 
-
-        void Start()
+        void Awake()
         {
-            camera = GameObject.Find("Camera").GetComponent<Camera>();
-            /* Cursor.lockState = CursorLockMode.Locked; */
-            Cursor.lockState = CursorLockMode.Confined;
+            camera = transform.Find("Camera").GetComponent<Camera>();
+            Cursor.lockState = CursorLockMode.Locked;
+            playerMesh = transform.Find("Mesh");
         }
 
         public void OnMove(InputAction.CallbackContext value)
@@ -37,15 +38,21 @@ namespace MMC
             xRotation -= delta.y * MOUSE_SENSITIVITY;
             xRotation = Mathf.Clamp(xRotation, -90, 90);
 
-            camera.transform.eulerAngles = new Vector3(xRotation, yRotation, 0.0f);
-
-            /* Debug.Log($"input is {delta}!"); */
+            camera.transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0.0f);
+            playerMesh.localRotation = Quaternion.Euler(0.0f, yRotation, 0.0f);
         }
 
-        public void OnMenu()
+        public void OnInteract(InputAction.CallbackContext value)
+        { }
+
+        public void OnQuit()
         {
-            Debug.Log("cancelled actions");
+#if UNITY_STANDALONE
             Application.Quit();
+#endif
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#endif
         }
 
     }

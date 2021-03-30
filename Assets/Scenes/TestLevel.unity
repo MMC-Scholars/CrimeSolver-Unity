@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.1802917, g: 0.22572428, b: 0.30693048, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -317,6 +317,17 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 7486505211459288082, guid: 92abca2c64fa15c489f9f0baec78768e, type: 3}
   m_PrefabInstance: {fileID: 1551786613371601482}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2139318099 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 52925251944995276, guid: 92abca2c64fa15c489f9f0baec78768e, type: 3}
+  m_PrefabInstance: {fileID: 1551786613371601482}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc72c0bc052499f4da533da3f65b04f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1551786613371601482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328,6 +339,46 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1445813366}
+    - target: {fileID: 2275434855554272200, guid: 92abca2c64fa15c489f9f0baec78768e, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275434855554272200, guid: 92abca2c64fa15c489f9f0baec78768e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: 72950256-a356-4bf4-a355-1fad567d011e
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275434855554272200, guid: 92abca2c64fa15c489f9f0baec78768e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: Player/Menu[/Keyboard/escape]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275434855554272200, guid: 92abca2c64fa15c489f9f0baec78768e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275434855554272200, guid: 92abca2c64fa15c489f9f0baec78768e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275434855554272200, guid: 92abca2c64fa15c489f9f0baec78768e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2139318099}
+    - target: {fileID: 2275434855554272200, guid: 92abca2c64fa15c489f9f0baec78768e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275434855554272200, guid: 92abca2c64fa15c489f9f0baec78768e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnQuit
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275434855554272200, guid: 92abca2c64fa15c489f9f0baec78768e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MMC.PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275434855554272200, guid: 92abca2c64fa15c489f9f0baec78768e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6635498794328118074, guid: 92abca2c64fa15c489f9f0baec78768e, type: 3}
       propertyPath: m_Name
       value: Player
