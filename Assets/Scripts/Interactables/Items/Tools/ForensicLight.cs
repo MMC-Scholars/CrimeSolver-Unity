@@ -18,20 +18,21 @@ namespace MMC
         float revealHardness;
         public float RevealHardness { get { return revealHardness; } }
 
-        RevealController revealer;
         Vector3 invisible = new Vector3();
 
         public bool IsLightOn { get; protected set; }
 
+        void Awake()
+        {
+            RevealController.SetRadius(RevealRadius);
+            RevealController.SetHardness(RevealHardness);
+        }
         void Start()
         {
             // make the collision box that checks if we hit invisible evidence not be able to detect
 
             // set the reveal distance
 
-            // set the reveal radius and hardness
-            revealer.SetRadius(RevealRadius);
-            revealer.SetHardness(RevealHardness);
         }
 
         void Update()
@@ -41,7 +42,7 @@ namespace MMC
                 // ****** PLACEHOLDER ******** //
                 Vector3 LocationOfRevealer = new Vector3();
                 // set reveal location
-                revealer.SetLocation(LocationOfRevealer);
+                RevealController.SetLocation(LocationOfRevealer);
             }
 
         }
@@ -62,7 +63,7 @@ namespace MMC
             // set visibility of light source to off
 
             // set parameter for sphere mask to be an arbitrary ocation (so nothing is revealed)
-            revealer.SetLocation(invisible);
+            RevealController.SetLocation(invisible);
         }
 
         void TurnOn()

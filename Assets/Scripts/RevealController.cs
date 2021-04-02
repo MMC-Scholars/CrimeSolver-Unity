@@ -1,28 +1,41 @@
 using UnityEngine;
 
-public class RevealController : MonoBehaviour
+namespace MMC
 {
-    Material material;
-
-    // Start is called before the first frame update
-    void Start()
+    public class RevealController : MonoBehaviour
     {
-        material = GetComponent<MeshRenderer>().sharedMaterial;
-    }
+        Material material;
 
-    public void SetLocation(Vector3 location)
-    {
-        material.SetVector("_Location", location);
-    }
+        static Vector3 revealLocation;
+        static float hardness;
+        static float radius;
 
-    public void SetHardness(float hardness)
-    {
-        material.SetFloat("_Hardness", hardness);
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
+            material = GetComponent<MeshRenderer>().sharedMaterial;
+            material.SetFloat("_Radius", radius);
+            material.SetFloat("_Hardness", hardness);
+        }
 
-    public void SetRadius(float radius)
-    {
-        material.SetFloat("_Radius", radius);
-    }
+        void LateUpdate()
+        {
+            material.SetVector("_Location", revealLocation); // we want to update this after we have received the new location
+        }
 
+        public static void SetLocation(Vector3 location)
+        {
+            revealLocation = location;
+        }
+
+        public static void SetHardness(float _hardness)
+        {
+            hardness = _hardness;
+        }
+
+        public static void SetRadius(float _radius)
+        {
+            radius = _radius;
+        }
+    }
 }
