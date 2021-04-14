@@ -10,9 +10,8 @@ namespace MMC
 
         public bool IsPinned { get; protected set; } // specifically "pinned" to a board
 
-        [SerializeField]
-        bool imagePinsPermanently;
-        public bool ImagePinsPermanently { get { return imagePinsPermanently; } } // theoretically an image can be pinned permanently (to some surface) but not be "pinned" to a board
+        [field: SerializeField]
+        public bool ImagePinsPermanently { get; protected set; } // theoretically an image can be pinned permanently (to some surface) but not be "pinned" to a board
 
         public override void StartInteract(PlayerPawn player, Vector3 hitLocation, Vector3 hitNormal)
         {

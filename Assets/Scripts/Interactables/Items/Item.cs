@@ -6,17 +6,16 @@ namespace MMC
     public abstract class Item : MonoBehaviour, IInteractable
     {
         public bool IsInHand { get; protected set; }
-        [SerializeField]
-        Vector3 inHandPosition;
-        public Vector3 InHandPosition { get { return inHandPosition; } }
 
-        [SerializeField]
+        [field: SerializeField]
+        public Vector3 InHandPosition { get; protected set; }
+
+        [field: SerializeField]
         Quaternion inHandRotation;
-        public Quaternion InHandRotation { get { return inHandRotation; } }
+        public Quaternion InHandRotation { get; protected set; }
 
-        [SerializeField]
-        Vector3 aimPosition;
-        public Vector3 AimPosition { get { return aimPosition; } }
+        [field: SerializeField]
+        public Vector3 AimPosition { get; protected set; }
 
         [SerializeField]
         Quaternion aimRotation;

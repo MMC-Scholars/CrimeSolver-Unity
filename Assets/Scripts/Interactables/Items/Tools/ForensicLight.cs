@@ -6,17 +6,14 @@ namespace MMC
 {
     public class ForensicLight : Tool
     {
-        [SerializeField]
-        float revealDistance;
-        public float RevealDistance { get { return revealDistance; } }
+        [field: SerializeField]
+        public float RevealDistance { get; protected set; }
 
-        [SerializeField]
-        float revealRadius;
-        public float RevealRadius { get { return revealRadius; } }
+        [field: SerializeField]
+        public float RevealRadius { get; protected set; }
 
-        [SerializeField]
-        float revealHardness;
-        public float RevealHardness { get { return revealHardness; } }
+        [field: SerializeField]
+        public float RevealHardness { get; protected set; }
 
         Vector3 invisible = new Vector3();
 
@@ -27,6 +24,7 @@ namespace MMC
             RevealController.SetRadius(RevealRadius);
             RevealController.SetHardness(RevealHardness);
         }
+
         void Start()
         {
             // make the collision box that checks if we hit invisible evidence not be able to detect
