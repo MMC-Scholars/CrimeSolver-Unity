@@ -62,6 +62,9 @@ namespace MMC
 
             // set parameter for sphere mask to be an arbitrary ocation (so nothing is revealed)
             RevealController.SetLocation(invisible);
+
+            // set state to false
+            IsLightOn = false;
         }
 
         void TurnOn()
@@ -70,6 +73,8 @@ namespace MMC
 
             // set visibility of light source to on
 
+            // set state to true
+            IsLightOn = true;
         }
 
         void ToggleLight()
@@ -82,7 +87,6 @@ namespace MMC
             {
                 TurnOn();
             }
-            IsLightOn = !IsLightOn;
         }
 
         public override void UseTool()
