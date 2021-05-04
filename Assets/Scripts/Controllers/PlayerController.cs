@@ -31,7 +31,7 @@ namespace MMC
             movementDelta = new Vector2();
         }
 
-        void Update()
+        void FixedUpdate()
         {
             if (bIsMoving)
             {
