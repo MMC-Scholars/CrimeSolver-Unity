@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace MMC
 {
-    public class Image : Item
+    public class Image : AItem
     {
         //
         //  Declare reference to current billboard here

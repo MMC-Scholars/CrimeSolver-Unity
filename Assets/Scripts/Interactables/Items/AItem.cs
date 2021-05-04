@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MMC
 {
-    public abstract class Item : MonoBehaviour, IInteractable
+    public abstract class AItem : MonoBehaviour, IInteractable
     {
         public bool IsInHand { get; protected set; }
 
@@ -23,7 +23,8 @@ namespace MMC
         {
             // check for space in the player inventory
 
-            // if there is space then place item into inventory
+            // if there is space then place AItem
+            // into inventory
         }
         public virtual void StopInteract() { }
 

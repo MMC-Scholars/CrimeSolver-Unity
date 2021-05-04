@@ -1,6 +1,6 @@
 namespace MMC
 {
-    public class Tool : Item
+    public class Tool : AItem
     {
         public virtual void UseTool()
         {
